@@ -1,0 +1,42 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  annotations:
+    serving.kserve.io/stop: 'false'
+    security.opendatahub.io/enable-auth: 'false'
+    openshift.io/description: ''
+    openshift.io/display-name: granite-8b-code-instruct
+    serving.kserve.io/deploymentMode: RawDeployment
+    opendatahub.io/hardware-profile-namespace: redhat-ods-applications
+    opendatahub.io/hardware-profile-name: gpu-profile
+    opendatahub.io/connections: granite-8b-code-instruct
+    opendatahub.io/model-type: generative
+  name: granite-8b-code-instruct
+  labels:
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/genai-asset: 'true'
+spec:
+  predictor:
+    automountServiceAccountToken: false
+    maxReplicas: 1
+    minReplicas: 1
+    model:
+      args:
+        - '--dtype=half'
+        - '--max-model-len=20000'
+        - '--gpu-memory-utilization=0.95'
+        - '--chat-template=/opt/app-root/template/tool_chat_template_granite.jinja'
+      modelFormat:
+        name: vLLM
+      name: ''
+      resources:
+        limits:
+          cpu: '1'
+          memory: 16Gi
+          nvidia.com/gpu: '1'
+        requests:
+          cpu: '1'
+          memory: 6Gi
+          nvidia.com/gpu: '1'
+      runtime: granite-8b-code-instruct
+      storageUri: 'oci://registry.redhat.io/rhelai1/modelcar-granite-8b-code-instruct:1.4.0'
