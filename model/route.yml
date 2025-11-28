@@ -9,7 +9,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: granite-8b-code-instruct-predictor-default
+    name: granite-8b-code-instruct-predictor
   port:
     targetPort: http
   tls:

@@ -8,4 +8,4 @@ resources:
   - secret.yml
   - serving-runtime.yml
   - inference-service.yml
-  - route.yml
+  #- route.yml
