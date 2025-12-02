@@ -6,7 +6,7 @@ curl -s -k -X POST \
     "messages": [
       {
         "role": "system",
-        "content": "You are a helpful and concise assistant named TinyLlama."
+        "content": "You are a helpful and concise assistant named Llama."
       },
       {
         "role": "user",
