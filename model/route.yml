@@ -1,18 +1,17 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: granite-8b-code-instruct
+  name: llama-32-3b-instruct
   labels:
     opendatahub.io/dashboard: 'true'
   annotations:
-    openshift.io/display-name: granite-8b-code-instruct
+    openshift.io/display-name: llama-32-3b-instruct
 spec:
   to:
     kind: Service
-    name: granite-8b-code-instruct-predictor
+    name: llama-32-3b-instruct-predictor
   port:
     targetPort: http
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-

@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: granite-code-model
+namespace: modelserving
 
 resources:
   - namespace.yml
   - secret.yml
-  - serving-runtime.yml
-  - inference-service.yml
-  #- route.yml
+  - servingruntime.yml
+  - inferenceservice.yml
+  - route.yml

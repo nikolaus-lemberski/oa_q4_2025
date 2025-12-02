@@ -9,7 +9,7 @@ metadata:
     opendatahub.io/template-display-name: vLLM NVIDIA GPU ServingRuntime for KServe
     opendatahub.io/template-name: vllm-cuda-runtime-template
     openshift.io/display-name: vLLM NVIDIA GPU ServingRuntime for KServe
-  name: granite-8b-code-instruct
+  name: llama-32-3b-instruct
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
