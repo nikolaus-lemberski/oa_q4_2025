@@ -16,4 +16,4 @@ curl -s -k -X POST \
     "max_tokens": 100,
     "temperature": 0.5,
     "stream": false
-  }'
+  }' | jq
