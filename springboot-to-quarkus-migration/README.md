@@ -6,34 +6,38 @@ It is a simplified version of [MTA getting started - Spring Boot to Quarkus](htt
 
 ## Build and run
 
+Build
 ```bash
 mvn clean package
 ```
 
+Run
 ```
 java -jar target/springboot-to-quarkus-migration-1.0.0-SNAPSHOT.jar
 ```
 
 ## Running Tests
 
+All tests
 ```bash
-# Run all tests
 mvn test
+```
 
-# Run specific test class
+Specific test class
+```bash
 mvn test -Dtest=TodoControllerTest
-
-mvn test jacoco:report
 ```
 
 ## Migration Analysis
 
 To analyze this application with MTA/Konveyor:
 
+Using Konveyor CLI (when available)
 ```bash
-# Using Konveyor CLI (when available)
 konveyor analyze --input springboot-to-quarkus-migration/ --target quarkus3 --output reports/
+```
 
-# Using MTA CLI
+Using MTA CLI
+```bash
 mta-cli --input springboot-to-quarkus-migration/ --target quarkus3 --output reports/springboot-quarkus-analysis
 ```
